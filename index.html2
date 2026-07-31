@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For My Baby ❤️</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+ margin:0;
+ height:100vh;
+ background:linear-gradient(135deg,#1a1a1a,#ff758c);
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ overflow:hidden;
+ font-family:sans-serif;
+}
+
+.box{
+ background:rgba(255,255,255,0.95);
+ width:85%;
+ padding:25px;
+ border-radius:30px;
+ text-align:center;
+ animation:open 2s;
+}
+
+@keyframes open{
+ from{
+ transform:scale(0);
+ opacity:0;
+ }
+ to{
+ transform:scale(1);
+ opacity:1;
+ }
+}
+
+.photo{
+ width:170px;
+ height:170px;
+ border-radius:50%;
+ object-fit:cover;
+ border:5px solid #ff4d6d;
+}
+
+h1{
+ color:#ff3366;
+}
+
+#text{
+ font-size:18px;
+ line-height:1.8;
+ min-height:220px;
+}
+
+button{
+ background:#ff3366;
+ color:white;
+ border:0;
+ padding:12px 25px;
+ border-radius:30px;
+}
+
+.heart{
+ position:absolute;
+ animation:fall 6s linear infinite;
+}
+
+@keyframes fall{
+ from{
+ top:-10%;
+ }
+ to{
+ top:110%;
+ }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<audio autoplay loop>
+<source src="myhome.mp3">
+</audio>
+
+
+<div class="box">
+
+<img src="baby.jpg" class="photo">
+
+<h1>
+Happy National Girlfriend Day ❤️
+</h1>
+
+<div id="text"></div>
+
+<button onclick="love()">
+ကိုကို့စကားလေး 💕
+</button>
+
+</div>
+
+
+<script>
+
+let message = `
+ကလေးရေ... ❤️
+
+ဒီနေ့လိုနေ့မှာ
+ကိုကိုပြောချင်တာလေးရှိတယ်...
+
+ကလေးက ကိုကို့ဘဝထဲမှာ
+အရေးကြီးဆုံးသူတစ်ယောက်ပါ။
+
+ပင်ပန်းတဲ့အချိန်တွေမှာ
+အားပေးပေးတဲ့သူ...
+
+ဝမ်းနည်းတဲ့အချိန်တွေမှာ
+ပြုံးစေတဲ့သူ...
+
+ကိုကိုပြန်လာချင်တဲ့နေရာက
+ကလေးရှိတဲ့နေရာပါ။
+
+My Home ဆိုတဲ့သီချင်းလိုပဲ
+ကလေးက ကိုကို့အတွက်
+နွေးထွေးတဲ့ အိမ်လေးပါ ❤️
+
+ချစ်တယ် ကလေး...
+အမြဲတန်ဖိုးထားနေမှာပါ 💕
+`;
+
+let i=0;
+
+function typing(){
+
+ if(i < message.length){
+
+ document.getElementById("text").innerHTML += message.charAt(i);
+
+ i++;
+
+ setTimeout(typing,70);
+
+ }
+
+}
+
+typing();
+
+
+function love(){
+
+alert("ကလေးရေ ❤️ ကိုကို အရမ်းချစ်တယ်။ အမြဲအနားမှာရှိချင်တယ် 💕");
+
+}
+
+
+setInterval(()=>{
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML="❤️";
+
+h.style.left=Math.random()*100+"%";
+
+h.style.fontSize=(20+Math.random()*30)+"px";
+
+document.body.appendChild(h);
+
+
+setTimeout(()=>{
+
+h.remove();
+
+},6000);
+
+
+},400);
+
+
+</script>
+
+</body>
+</html>
