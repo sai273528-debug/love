@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>For My Baby ❤️</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+    font-family:Arial,sans-serif;
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#ff4d88,#ff7eb3,#ffb6c1,#ff5fa2);
+    background-size:400% 400%;
+    animation:bg 10s ease infinite;
+}
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+.card{
+    width:90%;
+    max-width:520px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    color:#fff;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+h1{font-size:34px;}
+#text{
+    margin-top:20px;
+    min-height:170px;
+    line-height:1.8;
+    font-size:20px;
+}
+button{
+margin-top:20px;
+padding:12px 30px;
+border:none;
+border-radius:30px;
+background:#fff;
+color:#ff4d88;
+font-size:18px;
+cursor:pointer;
+font-weight:bold;
+}
+button:hover{
+transform:scale(1.05);
+}
+.heart{
+position:absolute;
+font-size:25px;
+animation:fall linear forwards;
+}
+@keyframes fall{
+0%{transform:translateY(-100px);opacity:1;}
+100%{transform:translateY(110vh);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h1>❤️ Happy National Girlfriend Day ❤️</h1>
+
+<div id="text"></div>
+
+<button onclick="showLove()">💌 Open My Heart</button>
+
+<!-- Music -->
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+<script>
+
+const message=`
+
+ကလေး...❤️
+
+National Girlfriend Day မှာ
+ကိုကို ပြောချင်တာတစ်ခုပဲရှိတယ်။
+
+ကိုကို့ဘဝထဲမှာ
+အချစ်ဆုံးက ကလေးပဲ။
+
+ဒီနေ့တင်မဟုတ်ဘူး...
+နေ့တိုင်း ချစ်မယ်...
+လတိုင်း ချစ်မယ်...
+နှစ်တိုင်း ချစ်မယ်...
+
+တစ်သက်လုံး
+ကိုကို့ရဲ့ ကလေးလေးဖြစ်ပေးပါနော်။ ❤️
+
+Love You Forever.
+- ကိုကို ❤️
+`;
+
+let i=0;
+function type(){
+if(i<message.length){
+document.getElementById("text").innerHTML+=message.charAt(i);
+i++;
+setTimeout(type,50);
+}
+}
+type();
+
+function showLove(){
+document.getElementById("music").play();
+alert("❤️ I Love You So Much Baby ❤️");
+}
+
+function heart(){
+const h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(20+Math.random()*25)+"px";
+h.style.animationDuration=(2+Math.random()*3)+"s";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),5000);
+}
+setInterval(heart,200);
+
+</script>
+
+</body>
+</html>
